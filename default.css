@@ -1,0 +1,17 @@
+body{
+    font-family: Verdana;
+    /* background: conic-gradient(mediumturquoise, cadetblue); */
+    background-size: 100%;
+    height: max-content;
+}
+
+.header{
+    background-image: repeating-linear-gradient(40deg, rgb(57, 255, 212), rgb(180, 255, 239) 40%);
+    padding: 2%;
+    text-align: center;
+}
+
+.menu{
+    font-size: 14px;
+    font-style: oblique;
+}
