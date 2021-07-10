@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<style>
+		body {
+			background-image: url('https://live.staticflickr.com/1464/24060063701_90f43e248d_b.jpg');
+			
+			background-size: cover;
+		}
+        label {
+            background-color: white;
+        }
+	</style>
+	<head>
+		<title>Literpris Alkohol</title>
+		<link rel="icon" href="https://cdn.iconscout.com/icon/premium/png-512-thumb/beer-bottle-17-695200.png">
+	</head>
+	<body>
+		<center>
+			<h1>Literpris alkohol</h1>
+			<form oninput= "x.value = (price.value / (liter.value * (percent.value / 100))).toFixed(2)">
+				<label for="percent">Alkoholprosent</label><br>
+				<input type="number" id="percent" tag="50"><br><br>
+
+				<label for="volume">Liter</label><br>
+				<input type="number" id="liter" tag="25"><br><br>
+	
+				<label for="price">Pris</label><br>
+				<input type="number" id="price"><br><br>	
+				
+				<b>
+					<output
+					name="x"
+					for="price liter percent"
+					style="background-color:white;">
+						Putt inn tall for resultat
+					</output>
+				<b>
+			</form>
+		</center>
+	</body>
+</html>

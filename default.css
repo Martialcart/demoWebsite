@@ -2,7 +2,6 @@ body{
     font-family: Verdana;
     /* background: conic-gradient(mediumturquoise, cadetblue); */
     background-size: 100%;
-    height: max-content;
 }
 
 .header{
@@ -14,4 +13,18 @@ body{
 .menu{
     font-size: 14px;
     font-style: oblique;
+    background-color: aquamarine;
+    width: fit-content;
+}
+
+button {
+    background-color: blue;
+    width: 100%;
+}
+
+.main_screen {
+    width: 600px;
+    height: 400px;
+    background-color: blueviolet;
+    position: static;
 }
