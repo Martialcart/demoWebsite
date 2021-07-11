@@ -1,7 +1,8 @@
-body{
+html, body{
     font-family: Verdana;
-    /* background: conic-gradient(mediumturquoise, cadetblue); */
     background-size: 100%;
+    margin: 0;
+    height: 100%;
 }
 
 .header{
@@ -22,9 +23,15 @@ button {
     width: 100%;
 }
 
-.main_screen {
-    width: 600px;
-    height: 400px;
+#main_screen {
+    margin: 0;
     background-color: blueviolet;
-    position: static;
+}
+
+iframe {
+ display: block; 
+ width: 100%; 
+ border: none; 
+ overflow-y: auto; 
+ overflow-x: hidden;
 }
