@@ -1,37 +1,39 @@
-html, body{
-    font-family: Verdana;
+shtml, body{
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-size: 100%;
-    margin: 0;
     height: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: #ffffff;
 }
 
 .header{
-    background-image: repeating-linear-gradient(40deg, rgb(57, 255, 212), rgb(180, 255, 239) 40%);
+    background-color: #f2f2f2;
+    font-size: 30px;
     padding: 2%;
     text-align: center;
 }
 
 .menu{
     font-size: 14px;
-    font-style: oblique;
-    background-color: aquamarine;
-    width: fit-content;
+    text-align: center;
+    background-color: #2b6777;
+    width: 20%;
+    float: left;
 }
 
 button {
-    background-color: blue;
+    background-color: #52ab98;
     width: 100%;
 }
 
 #main_screen {
     margin: 0;
-    background-color: blueviolet;
-}
-
-iframe {
- display: block; 
- width: 100%; 
- border: none; 
- overflow-y: auto; 
- overflow-x: hidden;
+    float: left;
+    width: 80%;
+    background-color: #c8d8e4;
+    display: block;
+    border: none;
+    height: 80vh;
+    width: 80%;
 }
