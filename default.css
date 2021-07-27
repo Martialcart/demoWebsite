@@ -15,7 +15,7 @@ html, body{
     font-size: 14px;
     font-style: oblique;
     background-color: aquamarine;
-    width: 30%;
+    width: 20%;
     float: left;
 }
 
@@ -27,14 +27,10 @@ button {
 #main_screen {
     margin: 0;
     float: left;
-    width: 70%;
+    width: 80%;
     background-color: blueviolet;
-}
-
-iframe {
- display: block; 
- width: 100%; 
- border: none; 
- overflow-y: auto; 
- overflow-x: hidden;
+    display: block;
+    border: none;
+    height: 80vh;
+    width: 80%;
 }
