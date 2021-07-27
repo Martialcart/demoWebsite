@@ -15,7 +15,8 @@ html, body{
     font-size: 14px;
     font-style: oblique;
     background-color: aquamarine;
-    width: fit-content;
+    width: 30%;
+    float: left;
 }
 
 button {
@@ -25,6 +26,8 @@ button {
 
 #main_screen {
     margin: 0;
+    float: left;
+    width: 70%;
     background-color: blueviolet;
 }
 
