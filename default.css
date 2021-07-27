@@ -1,8 +1,10 @@
 html, body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-size: 100%;
-    margin: 0;
     height: 100%;
+    margin-left: 5%;
+    margin-right: 5%;
+    background-color: antiquewhite;
 }
 
 .header{
