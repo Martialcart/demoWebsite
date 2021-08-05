@@ -3,12 +3,6 @@ function load_frame() {
     generate_menubar();
 }
 
-function make_div(title) {
-    const div = document.createElement("div");
-    div.id = title;
-    document.body.appendChild(div);
-}
-
 function make_header() {
     const header = document.createElement("p");
     header.innerHTML = "Jan Olav Berg"
@@ -16,6 +10,8 @@ function make_header() {
 }
 
 function generate_menubar() {
+    add_menu_headline("meny");
+    add_menu_button("hjem", "index.html");
     add_menu_headline("Meg");
     add_menu_button("CV", "cv.html");
 
