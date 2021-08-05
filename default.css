@@ -14,12 +14,13 @@ shtml, body{
     text-align: center;
 }
 
-.menu{
+#menu{
     font-size: 14px;
     text-align: center;
     background-color: #2b6777;
     width: 20%;
     float: left;
+    height: 100%;
 }
 
 button {
@@ -34,6 +35,6 @@ button {
     background-color: #c8d8e4;
     display: block;
     border: none;
-    height: 80%;
+    height: 100%;
     width: 80%;
 }

@@ -1,7 +1,10 @@
 function generate_menubar() {
     add_headline("meg");
-    add_button("Alko Pris", "alko_pris.html");
-    add_button("google", "https://www.google.com/");
+    add_button("CV", "../cv/cv.html");
+
+    add_headline("Prosjekt");
+    add_button("Literpris Alkohol", "../alko-pris/alko_pris.html");
+    add_button("Touch", "../touch/touch.html");
     
 }
 
