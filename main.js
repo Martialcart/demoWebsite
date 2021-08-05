@@ -1,5 +1,22 @@
+function load_frame() {
+    make_header();
+    generate_menubar();
+}
+
+function make_div(title) {
+    const div = document.createElement("div");
+    div.id = title;
+    document.body.appendChild(div);
+}
+
+function make_header() {
+    const header = document.createElement("p");
+    header.innerHTML = "Jan Olav Berg"
+    document.getElementById("header").appendChild(header);
+}
+
 function generate_menubar() {
-    add_menu_headline("meg");
+    add_menu_headline("Meg");
     add_menu_button("CV", "cv.html");
 
     add_menu_headline("Prosjekt");

@@ -5,7 +5,7 @@
 		background-image: url('https://live.staticflickr.com/1464/24060063701_90f43e248d_b.jpg');
 		background-size: cover;
 		background-repeat: no-repeat;
-		font-family: Arial, Helvetica, sans-serif;
+		text-align: center;
 	}
 
 	label, output, input {
@@ -23,11 +23,12 @@
 	<script src="main.js"></script>
 </head>
 
-<body onload="generate_menubar()">
-	<div id="menu" >
-	</div>
+<body onload="load_frame()">
+	<div id=header></div>
+    <div id="menu" ></div>
+
 	<div id="main_screen">
-		<h1>Literpris alkohol</h1>
+		<h1 style="background-color: rgba(255, 255, 255, 0.8);">Literpris alkohol</h1>
 
 		<form oninput="x.value = (price.value / (liter.value * (percent.value / 100))).toFixed(2)">
 			<label for="percent">Alkoholprosent</label><br>
