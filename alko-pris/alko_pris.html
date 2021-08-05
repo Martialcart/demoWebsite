@@ -6,8 +6,6 @@
 		background-size: cover;
 		background-repeat: no-repeat;
 		font-family: Arial, Helvetica, sans-serif;
-		max-width: fit-content;
-		margin: auto;
 	}
 
 	h1, label, output, input {
@@ -21,6 +19,7 @@
 <head>
 	<title>Literpris Alkohol</title>
 	<link rel="icon" href="https://cdn.iconscout.com/icon/premium/png-512-thumb/beer-bottle-17-695200.png">
+	<link rel="stylesheet" href="../default.css">
 	<script src="menu_creator.js"></script>
 </head>
 
@@ -28,24 +27,24 @@
 	<div id="menu" >
 	</div>
 	<div id="main_screen">
-	<h1>Literpris alkohol</h1>
+		<h1>Literpris alkohol</h1>
 
-	<form oninput="x.value = (price.value / (liter.value * (percent.value / 100))).toFixed(2)">
-		<label for="percent">Alkoholprosent</label><br>
-		<input type="number" id="percent" tag="50"><br><br>
+		<form oninput="x.value = (price.value / (liter.value * (percent.value / 100))).toFixed(2)">
+			<label for="percent">Alkoholprosent</label><br>
+			<input type="number" id="percent" tag="50"><br><br>
 
-		<label for="volume">Liter</label><br>
-		<input type="number" id="liter" tag="25"><br><br>
+			<label for="volume">Liter</label><br>
+			<input type="number" id="liter" tag="25"><br><br>
 
-		<label for="price">Pris</label><br>
-		<input type="number" id="price"><br><br>
+			<label for="price">Pris</label><br>
+			<input type="number" id="price"><br><br>
 
-		<b>
-			<output name="x" for="price liter percent">
-				Putt inn tall for resultat
-			</output>
 			<b>
-	</form>
+				<output name="x" for="price liter percent">
+					Putt inn tall for resultat
+				</output>
+				<b>
+		</form>
 	</div>
 </body>
 
