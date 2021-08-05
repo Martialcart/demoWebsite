@@ -5,10 +5,11 @@ function generate_menubar() {
 }
 
 function add_button(name, link) {
-
-    document.getElementById("menu").appendChild();
+    const button = document.createElement("button");
+    button.innerHTML = "test";
+    document.getElementById("menu").appendChild(button);
 }
 
 function add_headline(title) {
-    
+
 }
