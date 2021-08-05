@@ -3,25 +3,15 @@
     <head>
         <title>Jan Olav Berg</title>
         <link rel="stylesheet" href="default.css">
+        <script src="main.js"></script>
     </head>
-    <body>
-        <div>
+    <body onload="generate_menubar()">
             <div class="header">
                 <p>Jan Olav Berg</p>
             </div>
-            <div class="menu">
-                <h1>Meg</h1>
-                <button onclick="set_screen('file:cv.html')" >CV</button>
-                <h1>Prosjekt</h1>
-                <button onclick="set_screen('file:alko-pris/alko_pris.html')" >Literpris Alkohol</button>
-                <button onclick="set_screen('file:touch/touch.html')" >Touch</button>
-                <h1>Linker</h1>
+            <div id="menu">
             </div>
-            <div >
-                <iframe  id="main_screen" src=""></iframe>
+            <div id="main_screen">
             </div>
-           
-        </div>
     </body>
-    <script src="main.js"></script>
 </html>

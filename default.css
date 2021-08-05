@@ -1,4 +1,4 @@
-shtml, body{
+html, body{
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     background-size: 100%;
     height: 100%;
@@ -21,6 +21,7 @@ shtml, body{
     width: 20%;
     float: left;
     height: 100%;
+    overflow: auto;
 }
 
 button {
