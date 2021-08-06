@@ -28,7 +28,9 @@ body {
 
 button {
     background-color: #52ab98;
+    font-size: large;
     width: 100%;
+    height: 48px;
     border-radius: 15%;
 }
 
