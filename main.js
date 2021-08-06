@@ -10,9 +10,8 @@ function make_header() {
 }
 
 function generate_menubar() {
-    add_menu_headline("meny");
-    add_menu_button("hjem", "index.html");
     add_menu_headline("Meg");
+    add_menu_button("Hjem", "index.html");
     add_menu_button("CV", "cv.html");
 
     add_menu_headline("Prosjekt");
