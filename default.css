@@ -8,6 +8,7 @@ body {
     margin-right: 5%;
     background-color: #ffffff;
     height: 78%;
+    overflow: hidden;
 }
 
 #header{
