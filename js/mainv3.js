@@ -13,9 +13,7 @@ function generate_menubar() {
     add_menu_headline("Meg");
     add_menu_button("Hjem", "index.html");
     add_menu_button("CV", "cv.html");
-
     add_menu_headline("Kode");
-    add_menu_button("Literpris Alkohol", "alko_pris.html");
     add_menu_button("Touch", "touch.html");
     
 }
