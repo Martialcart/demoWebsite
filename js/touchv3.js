@@ -3,11 +3,14 @@ let keys = [];
 let time_stamp = performance.now();
 const default_reaction_time = 40000;
 const no_char_err_msg = "Ingen treningstegn angitt";
+const ms_in_min = 60000; //milli seconds in a minute
+const wrds_sntnce = 4; //words pr sentence
 
 function handle_input() {
     const result = document.getElementById("char_result");
     const input = document.getElementById("char_input");
     const request = document.getElementById("char_request");
+    const wpm = document.getElementById("wpm"); //words per minute
     const succes = input.value + " var riktig!";
     const fail = input.value + " er feil, forventet " + request.innerHTML;
 
@@ -23,8 +26,16 @@ function handle_input() {
         result.innerHTML = fail;
         result.style.color = "red";
     }
-
+    wpm.innerHTML = "Ord i minuttet: " + calc_wpm().toFixed(1);
     input.value = "";
+}
+/*estimates words per minute*/
+function calc_wpm() {
+    let time_sum = 0;
+    for ( i = 0; i < keys.length; i++) {
+        time_sum += char_rec[keys[i]];
+    }
+    return (keys.length / time_sum) * ms_in_min / wrds_sntnce;
 }
 
 function set_reaction_time(char) {
@@ -82,9 +93,9 @@ function randomize(string) {
     let a = string.split("");
     let n = a.length;
 
-    for(var i = n - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * (i + 1));
-        var tmp = a[i];
+    for(let i = n - 1; i > 0; i--) {
+        let j = Math.floor(Math.random() * (i + 1));
+        let tmp = a[i];
         a[i] = a[j];
         a[j] = tmp;
     }

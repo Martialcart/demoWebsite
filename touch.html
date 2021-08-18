@@ -5,7 +5,7 @@
         <link rel="stylesheet" href="css/defaultv3.css">
         <link rel="stylesheet" href="css/touch.css">
         <script src="js/mainv3.js" defer></script>
-        <script src="js/touchv2.js" defer></script>
+        <script src="js/touchv3.js" defer></script>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Learn to type faster on the keyboard faster. Program is focusing on the letters you are worst at">
@@ -16,13 +16,25 @@
         
         <div id="main_screen">
             <div style="text-align: center;">
-                <p id="char_request">skriv dette</p>
-                <p id="char_result">resultat</p>
-                <label for="char_input">skriv tegn her</label><br>
-                <input id="char_input" type="text" oninput="handle_input()"><br><br>
-                <label for="train_char">treningstegn</label><br>
+                <h2>Touch</h2>
+                <p id="wpm">Ord i minuttet:</p>
+                <p id="char_request"></p>
+                <p id="char_result"></p>
+                <label for="char_input">Trykk i teksfeltet for å starte</label><br>
+                <input id="char_input" type="text" onfocus="update_chars() " oninput="handle_input()"><br><br>
+                <h3>Instruksjoner</h3>
+                <ul style="list-style-position: inside;">
+                    <li>Touch lærer deg å skrive raskere på tastaturet.</li>
+                    <li>Skriv bokstavene som vises øverst, så raskt du klarer.</li>
+                    <li>Spillet fokuserer på bokstavene du er dårligst på.</li>
+                    <li><p>
+                        Hemmeligheten bak å skrive raskt, er å <b>ikke</b> se på tastuturet mens man skriver. <br>
+                        Tastene f og j har knotter pekefingrene kan føle seg frem til.
+                    </p></li>
+                </ul>
+                <h4>Innstillinger</h4>
+                <label for="train_char">Endre tegn og bokstaver:</label>
                 <input id="train_char" type="text" value="abcdefghijklmnopqrstuvwxyzæøå"><br>
-                <button id="app_button" onclick="update_chars()">Start / oppdater tegn</button>
             </div>
         </div>
     </body>    
