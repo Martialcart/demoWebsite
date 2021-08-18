@@ -1,7 +1,5 @@
-let char_best = [];
-let char_rec = [];
-let average_reaction_time = 0;
-let reactions = 1;
+let char_rec = {};
+let keys = [];
 let time_stamp = performance.now();
 const default_reaction_time = 40000;
 const no_char_err_msg = "Ingen treningstegn angitt";
@@ -18,14 +16,8 @@ function evaluate(request, input) {
     const succes = input.value + " er riktig!";
     const fail = input.value + " er feil, forventet " + request.innerHTML;
     if(request.innerHTML === input.value.charAt(0)) {
-        let temp = request.innerHTML;
+        char_rec[request.innerHTML] = timer();
         get_new_char_request();
-        let time = timer();
-        if(time < average_reaction_time) char_best.push(temp);
-        else char_rec.push(temp);
-        average_reaction_time = average(time);
-        console.log(average_reaction_time);
-        console.log(char_rec.length);
         return succes;
     } else {
         return fail;
@@ -36,30 +28,30 @@ function update_chars() {
     char_rec = {};
     const chars = document.getElementById("train_char").value;
     const n_chars = chars.length;
+    worst_char = chars.charAt(0);
     for (c=0; c < n_chars; c++) {
         if(!char_rec.hasOwnProperty(chars.charAt(c))) {
             char_rec[chars.charAt(c)] = default_reaction_time;
+            keys.push(chars.charAt(c));
         }
     }
-    for (const key in char_rec){
-        console.log(key);
-      }
     get_new_char_request();
 }
 
 function get_new_char_request() {
-    const requester = document.getElementById("char_request");
-    if(0 < char_rec.length) requester.innerHTML = char_rec.pop();
-    else if(0 < char_best.length) requester.innerHTML = char_best.pop();
-    else requester.innerHTML = no_char_err_msg;
+    let worst_char = keys[0];
+    let request = document.getElementById("char_request");
+    for (k = 0; k < keys.length; k++){
+        if (char_rec[worst_char] < char_rec[keys[k]] && keys[k] !== request.innerHTML) {
+            worst_char = keys[k];
+        }
+        console.log(keys[k] + char_rec[keys[k]]);
+    }
+    request.innerHTML = worst_char;
 }
 /* returns time since last call*/ 
 function timer() {
     let temp = time_stamp;
     time_stamp = performance.now();
     return time_stamp - temp;
-}
-/* ads a new value to already estimated average*/ 
-function average(new_time) {
-    return (average_reaction_time * (reactions - 1)  + new_time) / reactions++;
 }
