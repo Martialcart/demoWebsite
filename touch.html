@@ -2,14 +2,15 @@
 <html lang="nor">
     <head>
         <title>Touch</title>
-        <link rel="stylesheet" href="css/defaultv2.css">
+        <link rel="stylesheet" href="css/defaultv3.css">
         <link rel="stylesheet" href="css/touch.css">
         <script src="js/mainv3.js" defer></script>
         <script src="js/touchv2.js" defer></script>
+        <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta name="description" content="Learn to type faster on the keyboard faster. Program is focusing on the letters you are worst at">
     </head>
-    <body onload="load_frame()">
+    <body onload="load_frame()" onload="update_chars()">
         <div id=header></div>
         <div id="menu" ></div>
         
@@ -20,8 +21,8 @@
                 <label for="char_input">skriv tegn her</label><br>
                 <input id="char_input" type="text" oninput="handle_input()"><br><br>
                 <label for="train_char">treningstegn</label><br>
-                <input id="train_char" type="text"><br>
-                <button id="app_button" onclick="update_chars()">Oppdater tegn</button>
+                <input id="train_char" type="text" value="abcdefghijklmnopqrstuvwxyzæøå"><br>
+                <button id="app_button" onclick="update_chars()">Start / oppdater tegn</button>
             </div>
         </div>
     </body>    

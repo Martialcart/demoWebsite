@@ -43,4 +43,5 @@ button {
     background-color: #c8d8e4;
     height: 100%;
     width: 80%;
+    overflow: auto;
 }
