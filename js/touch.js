@@ -44,7 +44,7 @@ function update_chars() {
 
 function get_new_char_request() {
     const requester = document.getElementById("char_request");
-    if(3 < char_worst.length) requester.innerHTML = char_worst.pop();
+    if(0 < char_worst.length) requester.innerHTML = char_worst.pop();
     else if(0 < char_best.length) requester.innerHTML = char_best.pop();
     else requester.innerHTML = no_char_err_msg;
 }
@@ -54,7 +54,7 @@ function timer() {
     time_stamp = performance.now();
     return time_stamp - temp;
 }
-/* ads a new value to already esitmated average*/ 
+/* ads a new value to already estimated average*/ 
 function average(new_time) {
     return (average_reaction_time * (reactions - 1)  + new_time) / reactions++;
 }
