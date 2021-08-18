@@ -23,6 +23,7 @@ function handle_input() {
         result.innerHTML = fail;
         result.style.color = "red";
     }
+
     input.value = "";
 }
 
@@ -41,14 +42,15 @@ function update_chars() {
     const request = document.getElementById("char_request");
     const n_chars = chars.length;
     worst_char = chars.charAt(0);
+
     for (c=0; c < n_chars; c++) {
         if(!char_rec.hasOwnProperty(chars.charAt(c))) {
             char_rec[chars.charAt(c)] = default_reaction_time;
             keys.push(chars.charAt(c));
         }
     }
+
     if (no_characters()) {
-        console.log("no characters");
         request.innerHTML = no_char_err_msg;
     } else { 
         request.innerHTML = get_worst_char(request.innerHTML);
@@ -57,6 +59,7 @@ function update_chars() {
 
 function get_worst_char(last_request) {
     let worst_char = keys[0];
+
     for (k = 0; k < keys.length; k++){
         if (char_rec[worst_char] < char_rec[keys[k]] && keys[k] !== last_request) {
             worst_char = keys[k];
