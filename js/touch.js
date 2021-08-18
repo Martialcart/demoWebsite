@@ -11,7 +11,10 @@ function handle_input() {
     const succes = input.value + " var riktig!";
     const fail = input.value + " er feil, forventet " + request.innerHTML;
 
-    if(input_correct(input, request)) {
+    if(no_characters()) {
+        request.innerHTML = no_char_err_msg;
+    }
+    else if(input_correct(input, request)) {
         set_reaction_time(request.innerHTML);        
         request.innerHTML = get_worst_char(request.innerHTML);
         result.innerHTML = succes;
@@ -34,7 +37,7 @@ function input_correct(input, request) {
 function update_chars() {
     char_rec = {};
     keys = [];
-    const chars = document.getElementById("train_char").value;
+    const chars = randomize(document.getElementById("train_char").value);
     const request = document.getElementById("char_request");
     const n_chars = chars.length;
     worst_char = chars.charAt(0);
@@ -44,7 +47,12 @@ function update_chars() {
             keys.push(chars.charAt(c));
         }
     }
-    request.innerHTML = get_worst_char(request.innerHTML);
+    if (no_characters()) {
+        console.log("no characters");
+        request.innerHTML = no_char_err_msg;
+    } else { 
+        request.innerHTML = get_worst_char(request.innerHTML);
+    }
 }
 
 function get_worst_char(last_request) {
@@ -61,4 +69,21 @@ function timer() {
     let temp = time_stamp;
     time_stamp = performance.now();
     return time_stamp - temp;
+}
+
+function no_characters() {
+    return keys.length === 0;
+}
+
+function randomize(string) {
+    let a = string.split("");
+    let n = a.length;
+
+    for(var i = n - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * (i + 1));
+        var tmp = a[i];
+        a[i] = a[j];
+        a[j] = tmp;
+    }
+    return a.join("");
 }
