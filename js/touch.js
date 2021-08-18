@@ -8,25 +8,34 @@ function handle_input() {
     const result = document.getElementById("char_result");
     const input = document.getElementById("char_input");
     const request = document.getElementById("char_request");
-    result.innerHTML = evaluate(request, input);
+    const succes = input.value + " var riktig!";
+    const fail = input.value + " er feil, forventet " + request.innerHTML;
+
+    if(input_correct(input, request)) {
+        set_reaction_time(request.innerHTML);        
+        request.innerHTML = get_worst_char(request.innerHTML);
+        result.innerHTML = succes;
+        result.style.color = "green";
+    } else {
+        result.innerHTML = fail;
+        result.style.color = "red";
+    }
     input.value = "";
 }
 
-function evaluate(request, input) {
-    const succes = input.value + " var riktig!";
-    const fail = input.value + " er feil, forventet " + request.innerHTML;
-    if(request.innerHTML === input.value.charAt(0)) {
-        char_rec[request.innerHTML] = timer();
-        get_new_char_request();
-        return succes;
-    } else {
-        return fail;
-    }
+function set_reaction_time(char) {
+    char_rec[char] = timer();
+}
+
+function input_correct(input, request) {
+    return request.innerHTML === input.value.charAt(0);
 }
 
 function update_chars() {
     char_rec = {};
+    keys = [];
     const chars = document.getElementById("train_char").value;
+    const request = document.getElementById("char_request");
     const n_chars = chars.length;
     worst_char = chars.charAt(0);
     for (c=0; c < n_chars; c++) {
@@ -35,19 +44,17 @@ function update_chars() {
             keys.push(chars.charAt(c));
         }
     }
-    get_new_char_request();
+    request.innerHTML = get_worst_char(request.innerHTML);
 }
 
-function get_new_char_request() {
+function get_worst_char(last_request) {
     let worst_char = keys[0];
-    let request = document.getElementById("char_request");
     for (k = 0; k < keys.length; k++){
-        if (char_rec[worst_char] < char_rec[keys[k]] && keys[k] !== request.innerHTML) {
+        if (char_rec[worst_char] < char_rec[keys[k]] && keys[k] !== last_request) {
             worst_char = keys[k];
         }
-        console.log(keys[k] + char_rec[keys[k]]);
     }
-    request.innerHTML = worst_char;
+    return worst_char;
 }
 /* returns time since last call*/ 
 function timer() {
