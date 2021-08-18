@@ -13,7 +13,7 @@ function handle_input() {
 }
 
 function evaluate(request, input) {
-    const succes = input.value + " er riktig!";
+    const succes = input.value + " var riktig!";
     const fail = input.value + " er feil, forventet " + request.innerHTML;
     if(request.innerHTML === input.value.charAt(0)) {
         char_rec[request.innerHTML] = timer();
