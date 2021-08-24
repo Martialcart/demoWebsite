@@ -15,6 +15,7 @@ function generate_menubar() {
     add_menu_button("CV", "cv.html");
     add_menu_headline("Kode");
     add_menu_button("Touch", "touch.html");
+    add_menu_button("BMI", "bmi.html");
     
 }
 

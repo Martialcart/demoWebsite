@@ -38,6 +38,7 @@ button {
 
 #main_screen {
     margin: 0;
+    text-align: center;
     float: left;
     width: 80%;
     background-color: #c8d8e4;
