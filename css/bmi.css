@@ -1,18 +1,12 @@
-#bmi_gui {
-    text-align: left;
+.left {
+   float:left;
+   margin-left: 10%;
 }
-#bmi18 {
-    margin-left: 10%;
-}
-
-#bmi25 {
-    margin-left: 33%;
+.center {
+    text-align: center;
 }
 
-#bmi30 {
-    margin-left: 33%;
-}
-
-#bmi_result {
-    margin-left: 47.2%;
+.right {
+    float:right;
+    margin-right: 10%;
 }

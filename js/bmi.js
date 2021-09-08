@@ -1,6 +1,15 @@
 /*connects gui and action*/
 function handle_input() {
-    console.log("testest funket");
+    const kg_inn = document.getElementById("weight_kg");
+    const cm_inn = document.getElementById("height_cm");
+    const r_bmi = document.getElementById("bmi");
+    const r18 = document.getElementById("r18");
+    const r25 = document.getElementById("r25");
+    const r30 = document.getElementById("r30");
+    r18.innerHTML = kg(18, to_m(cm_inn.value));
+    r25.innerHTML = kg(25, to_m(cm_inn.value));
+    r30.innerHTML = kg(30, to_m(cm_inn.value));
+    r_bmi.innerHTML = bmi(kg_inn.value, to_m(cm_inn.value));
 }
 
 /*returns kg, from bmi and height*/
@@ -17,8 +26,3 @@ function bmi(kg, meter) {
 function to_m(cm) {
     return cm / 100;
 }
-
-/*returns position in percent*/
-function result_position(domain_size, position) {
-    return position / domain_size * 100;
-} 
