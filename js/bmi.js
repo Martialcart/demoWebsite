@@ -1,3 +1,5 @@
+const n_decimals = 2;
+
 /*connects gui and action*/
 function handle_input() {
     const kg_inn = document.getElementById("weight_kg");
@@ -14,12 +16,12 @@ function handle_input() {
 
 /*returns kg, from bmi and height*/
 function kg(bmi, meter) {
-    return bmi * Math.pow(meter,2);
+    return (bmi * Math.pow(meter,2)).toFixed(n_decimals);
 }
 
 /*returns bmi, from weight and height*/
 function bmi(kg, meter) {
-    return kg / Math.pow(meter, 2);
+    return (kg / Math.pow(meter, 2)).toFixed(n_decimals);
 }
 
 /*converts centimeters to meters*/
