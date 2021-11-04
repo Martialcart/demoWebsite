@@ -1,11 +1,11 @@
 #portrait {
     float: right;
     margin: 2%;
-    z-index: 99;
-    position: absolute;
 }
 
 .spalte {
     width: fit-content;
     text-align: left;
+    float: left;
+    margin: auto;
 }
