@@ -1,0 +1,10 @@
+#portrait {
+    float: right;
+    margin: 2%;
+}
+
+.spalte {
+    float: left;
+    margin: 4%;
+    text-align: left;
+}
